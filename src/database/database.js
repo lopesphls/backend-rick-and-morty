@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
-async function connection () {
-  await mongoose.connect(process.env.DB_URL, {
+const connection = async () => {
+  await mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })

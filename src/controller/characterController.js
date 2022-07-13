@@ -1,16 +1,16 @@
-import characterModel from '../model/characterModel'
+import characterModel from '../model/characterModel.js'
 
 export async function getAll (req, res) {
-  const toDo = await characterModel.find()
+  const character = await characterModel.find()
 
-  res.send(toDo)
+  res.send(character)
 }
 
 export async function getById (req, res) {
   const { id } = req.params
-  const toDo = await characterModel.findById(id)
+  const character = await characterModel.findById(id)
 
-  res.send(toDo)
+  res.send(character)
 }
 
 export async function create (req, res) {
@@ -23,9 +23,9 @@ export async function create (req, res) {
 export async function edit (req, res) {
   const { id } = req.params
   const message = req.body
-  const toDo = await characterModel.findByIdAndUpdate(id, message)
+  const character = await characterModel.findByIdAndUpdate(id, message)
 
-  if (toDo) {
+  if (character) {
     const edited = await characterModel.findById(id)
     res.send(edited)
   }
