@@ -1,8 +1,8 @@
 import mongoose from 'mongoose'
 
 const characterSchema = new mongoose.Schema({
-  nome: { type: String, required: true },
-  imagem: { type: String, required: true }
+  name: { type: String, required: true },
+  imageUrl: { type: String, required: true }
 }, {
   timestamps: true
 })

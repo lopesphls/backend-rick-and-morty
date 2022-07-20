@@ -1,12 +1,13 @@
 import { Router } from 'express'
-import { create, deletar, edit, getAll, getById } from '../controller/characterController.js'
+import { create, deletar, edit, getAll, getById, getByName } from '../controller/characterController.js'
 
 const router = Router()
 
-router.get('/character', getAll)
-router.get('/character/:id', getById)
-router.post('/character/criar', create)
-router.put('/character/:id', edit)
-router.delete('/character/deletar/:id', deletar)
+router.get('/characters', getAll)
+router.get('/character/find/:id', getById)
+router.get('/character/search', getByName)
+router.post('/character/create', create)
+router.put('/character/update/:id', edit)
+router.delete('/character/delete/:id', deletar)
 
 export default router
