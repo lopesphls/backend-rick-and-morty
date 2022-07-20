@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 const connection = async () => {
-  await mongoose.connect(process.env.DATABASE_URL, {
+  await mongoose.connect('mongodb+srv://lopesphls:1bxEbKOfjkwGk0ge@rickandmorty.dpqb2.mongodb.net/?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
